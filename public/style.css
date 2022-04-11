@@ -10,6 +10,17 @@ body{
     display: block;
 }
 
+.logo{
+    margin-top: 25px;
+    margin-left: 25px;
+    color: rgb(246, 234, 220);
+}
+
+.tagline{
+    margin-left: 25px;
+    color: rgb(139, 149, 177)
+}
+
 #container{
     display:flex;
     flex-direction: column;
