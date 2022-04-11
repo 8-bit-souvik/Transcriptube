@@ -20,6 +20,7 @@
 
 ![Screenshot from 2022-04-12 00-00-08](https://user-images.githubusercontent.com/72222987/162812137-62e72847-8a1f-4b87-966b-00372e0bed60.png)
 
+# demo:
 
-[![Video Demo](https://user-images.githubusercontent.com/72222987/162812149-430973f1-34d4-4d35-8857-ed09af5ca674.png)](https://www.youtube.com/watch?v=t_ySQ1Eb9W4&t=4s)
+https://user-images.githubusercontent.com/72222987/162813945-35dcfe13-11eb-45c5-88c5-5fff36fa9188.mp4
 
