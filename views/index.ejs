@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transcriptor</title>
+  </head>
+  <body>
+    <input type="text" id="transcriptUrl" />
+    <button id="transcript-buttton" onclick="getdata()">transcript</button>
+
+    <br />
+    <br />
+    <br />
+
+    <div id="script"></div>
+
+    <script type="text/javascript">
+      const getdata = (data) => {
+        var data = document.getElementById("transcriptUrl").value;
+        document.querySelector("#script").innerHTML = "Loading transcript...."
+        fetch("/api/transcript", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({url: data}),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Success:", data);
+            document.querySelector("#script").innerHTML = data.script;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      };
+    </script>
+  </body>
+</html>
