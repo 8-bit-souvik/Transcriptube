@@ -4,7 +4,8 @@ const { Module } = require("module");
 const express = require("express");
 const router = express.Router();
 
-const deepgramApiKey = "59ef4266b565114d9bd8488f21028efd9aea6dc0";
+const deepgramApiKey = process.env.deepgramApiKey;
+const xrapidAPIkey = process.env.xrapidAPIkey
 
 router.post("/transcript", (req, res, next) => {
 
@@ -16,7 +17,7 @@ router.post("/transcript", (req, res, next) => {
     params: { video_link: url },
     headers: {
       "X-RapidAPI-Host": "socialdownloader.p.rapidapi.com",
-      "X-RapidAPI-Key": "b0eb293ee1msh8170a9e5aa01e2fp192f4ejsn40ecbc90804f",
+      "X-RapidAPI-Key": xrapidAPIkey,
     },
   };
 
@@ -59,7 +60,8 @@ router.post("/transcript", (req, res, next) => {
           //     }
           //   );
 
-          console.log(`result: ${script}`);
+          // console.log(`result: ${script}`);
+          console.log("success! \n");
 
           return res.send({ script: script });
         })

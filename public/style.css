@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: rgb(32, 29, 60);
+    display: block;
+}
+
+#container{
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#transcriptUrl{
+    margin: 0 auto;
+    width: 100%;
+    height:5ch;
+    text-align: center;
+}
+
+#transcript-buttton{
+    margin: 0 auto;
+    width: 100%;
+    height: 5ch;
+    background-color: rgb(98, 99, 127);
+    color:white;
+}
+
+#script{
+    min-height: 10ch;
+    background-color:rgb(74, 67, 146);
+    color:white;
+    padding: 5px;
+}
+
+@media screen and (max-width: 650px) {
+    #container{
+        width: 90%;
+    }
+}

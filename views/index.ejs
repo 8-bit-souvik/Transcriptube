@@ -4,28 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/style.css" />
     <title>transcriptor</title>
   </head>
   <body>
-    <input type="text" id="transcriptUrl" />
-    <button id="transcript-buttton" onclick="getdata()">transcript</button>
-
-    <br />
-    <br />
     <br />
 
-    <div id="script"></div>
+    <div id="container">
+      <br />
+
+      <input type="text" id="transcriptUrl" placeholder="enter youtube link" />
+      <br />
+      <button id="transcript-buttton" onclick="getdata()">transcript</button>
+
+      <br />
+      <br />
+      <br />
+
+      <div id="script"></div>
+    </div>
 
     <script type="text/javascript">
       const getdata = (data) => {
         var data = document.getElementById("transcriptUrl").value;
-        document.querySelector("#script").innerHTML = "Loading transcript...."
+        document.querySelector("#script").innerHTML = "Loading transcript.... <br> <p style='color: #73717f'> it can take upto 3 minutes sometimes! </p>";
         fetch("/api/transcript", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({url: data}),
+          body: JSON.stringify({ url: data }),
         })
           .then((response) => response.json())
           .then((data) => {
